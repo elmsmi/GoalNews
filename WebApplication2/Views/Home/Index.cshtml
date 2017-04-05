@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1></h1>
+    <div class="container">
+        <div class="col-md-6" style="margin-bottom:12px">
+            @Html.ActionLink("Gestionar Noticias", "Index", "News", null, new { @class = "btn btn-default btn-lg", @style = "width:100%" })
+        </div>
+
+        <div class="col-md-6" style="margin-bottom:12px">
+            @Html.ActionLink("Gestionar Empleados", "Index", "Employees", null, new { @class = "btn btn-default btn-lg",@id="employees", @style = "width:100%" })
+        </div>
+
+        <div class="col-md-6" style="margin-bottom:12px">
+            @Html.ActionLink("Gestionar Clientes", "Index", "Clients", null, new { @class = "btn btn-default btn-lg",@id="clients", @style = "width:100%" })
+        </div>
+
+        <div class="col-md-6 style=" margin-bottom:12px"">
+            @Html.ActionLink("Gestionar Peticiones", "Index", "Requests", null, new { @class = "btn btn-default btn-lg",@id="requests", @style = "width:100%" })
+        </div>
+    </div>
+</div>
+
+
+

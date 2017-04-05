@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GoalNews.Models.Client>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Lista de Clientes</h2>
+        <p>
+            @Html.ActionLink("Añadir cliente", "Create",null, new { @class="btn btn-success"})
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-default btn-xs" }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |*@
+                        @Html.ActionLink("Borrar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

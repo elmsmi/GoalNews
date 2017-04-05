@@ -1,0 +1,53 @@
+﻿@model GoalNews.Models.New
+
+@*@model IEnumerable<GoalNews.Models.New>*@
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>¿ Estas seguro de querer borrar esta noticia ?</h2>
+        <div class="form-group">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Noticia)
+                </dt>
+
+                <dd>
+                    @Html.Raw(HttpUtility.HtmlDecode(@Model.Noticia))
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cliente)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cliente)
+                </dd>
+            </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color" style="text-align:center">
+
+                        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+                        @Html.ActionLink("Lista de noticas", "Index",null, new { @class = "btn btn-default" })
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

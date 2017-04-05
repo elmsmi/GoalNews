@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GoalNews.Models.New>
+
+@{
+    ViewBag.Title = "ExportExcel";
+}
+
+
+<div class="jumbotron">
+    <div class="container">
+        @*<h2>Exportar tabla a Excel</h2>*@
+        <div class="col-lg-6" style="margin-bottom:10px">
+            <button id="export" class="col-lg-5 btn btn-default" style="text-align:center;margin-right:5px">Exportar a Excel</button>
+            @Html.ActionLink("Volver al filtro de noticias", "Index", "News", null, new { @class = "col-lg-5 btn btn-group btn-default", id="btngris", style = "text-align:center" })
+        </div>
+        <br />
+
+        <table id="table2excel" class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Noticia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente)
+                    </td>
+                    <td>
+                        @Html.Raw(HttpUtility.HtmlDecode(item.Noticia))
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="~/scripts/jquery.table2excel.js"></script>
+
+    <script>
+        $("#export").click(function () {
+            $("#table2excel").table2excel({
+                // exclude CSS class
+                exclude: ".noExl",
+                name: "Worksheet Name",
+                filename: "ExcelFile" //do not include extension
+            });
+        });
+    </script>
+
+}

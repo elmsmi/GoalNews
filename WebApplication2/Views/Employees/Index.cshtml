@@ -1,0 +1,49 @@
+﻿@*@model IList<GoalNews.Models.Employee>*@
+
+@model IEnumerable<GoalNews.Models.Aux>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2 style="text-align:center">Lista de emplados y sus clientes</h2>
+        <p>
+            @Html.ActionLink("Añadir empleado", "Create", null, new { @class = "btn btn-success" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Empleado
+                </th>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Opciones
+                </th>
+            </tr>
+
+            @foreach (var group in @Model.GroupBy(item => new { item.empIdAux, item.empAux }))
+            {
+                <tr>
+                    <td>
+                        @group.Key.empAux
+                    </td>
+                    <td>
+                        @foreach (var item in group)
+                        {
+                            <div style="margin-bottom:6px">@Html.DisplayFor(modelItem => item.cliAux)</div>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = group.Key.empIdAux }, new { @class = "btn btn-default btn-xs" }) |
+                        @Html.ActionLink("Borrar", "Delete", new { id = group.Key.empIdAux }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

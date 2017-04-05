@@ -1,0 +1,33 @@
+﻿@model GoalNews.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h3 style="text-align:center">¿ Estas seguro de que quieres borrar este empleado ?</h3>
+        <div class="form-group">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Empleado)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Empleado)
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color" style="text-align:center">
+                    <input type="submit" value="Borrar" class="btn btn-danger" /> |
+                    @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            }
+        </div>
+    </div>
+</div>

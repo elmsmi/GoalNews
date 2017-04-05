@@ -1,0 +1,106 @@
+﻿@model GoalNews.Models.New
+
+@{
+    ViewBag.Title = "Añadir noticia";
+}
+
+<div class="jumbotron">
+
+    <h2 style="text-align:center">Añadir noticia</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="container">
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Cliente</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.Cliente, new SelectList(ViewBag.Cliente), string.Empty, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Cliente, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Noticia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Noticia, new { @class = "form-control" , required = "required" })
+                        @Html.ValidationMessageFor(model => model.Noticia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Añadir noticia" class="btn btn-info" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/scripts/tinymce/tinymce.min.js"></script>
+
+
+    <script type="text/javascript">
+        // Initialize your tinyMCE Editor with your preferred options
+        tinyMCE.init({
+            // General options
+            mode: "textareas",
+            theme: "modern",
+            // Theme options
+            theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+            theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+            theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+            theme_advanced_buttons4: "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage",
+            theme_advanced_toolbar_location: "top",
+            theme_advanced_toolbar_align: "left",
+            theme_advanced_statusbar_location: "bottom",
+            theme_advanced_resizing: true,
+            plugins: "autoresize",
+            // Example content CSS (should be your site CSS)
+            content_css: "css/example.css",
+        });
+    </script>
+
+
+
+
+    @*<script type="text/javascript">
+
+            $("#btnSubmit").on('click', function (event) {
+                var data = {
+                    Fecha: $('#Fecha').val(),
+                    Cliente: $('#Cliente').val(),
+                    Empleado: $('#Empleado').val(),
+                    Noticia: $('#Noticia')[0].innerHTML
+                };
+                console.log(data);
+
+                $.post("./Create", data)
+                .done(function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
+                });
+            });
+        </script>*@
+
+
+}
+

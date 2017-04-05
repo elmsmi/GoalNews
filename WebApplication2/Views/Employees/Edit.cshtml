@@ -1,0 +1,92 @@
+﻿@model GoalNews.Models.Employee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Editar Empleado</h2>
+
+        <div class="col-xs-offset-2" style="font-size:18px;">
+            <table class="table">
+                <tr>
+                    <th>
+                        Empleado
+                    </th>
+                    <th>
+                        Clientes
+                    </th>
+                    <th>Opciones</th>
+                </tr>
+                <tr>
+                    <td>@Model.Empleado</td>
+                    <td>
+                        @for (int i = 0; i < ViewBag.EClients.Count; i++)
+                        {
+                            <div>
+                                @ViewBag.EClients[i].Cliente
+                            </div>
+                        }
+                    </td>
+                    <td>
+                        @if (ViewBag.EClients.Count > 1)
+                        {
+                            for (int i = 0; i < ViewBag.EClients.Count; i++)
+                            {
+                                <div>
+                                    @Html.ActionLink("Borrar", "DeleteFromEmpCli", new { IdC = ViewBag.EClients[i].ID, IdE = Model.ID }, new { @class = "btn btn-danger btn-xs" })
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div style="color:red;">Un empleado debe tener como mínimo un cliente</div>
+                        }
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Empleado, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Empleado, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Empleado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Añadir nuevos clientes", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.ListBoxFor(model => model.GetClients, new SelectList(ViewBag.Cliente), new { @class = "form-control selectpicker", @multiple = "multiple", data_live_search = "true", data_placeholder = "selecciona al menos un cliente" })
+                        @Html.ValidationMessageFor(model => model.GetClients, "", new { @class = "text-danger", required = "required" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Añadir" class="btn btn-info" />
+                        @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+        *
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

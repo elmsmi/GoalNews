@@ -1,0 +1,50 @@
+﻿@model GoalNews.Models.Request
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2 style="text-align:center">Realizar petición</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Empleado, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Empleado, new SelectList(ViewBag.Empleado), string.Empty, new { @class = "form-control selectpicker", data_live_search = "true" , title = "" })
+                        @Html.ValidationMessageFor(model => model.Empleado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Peticion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Peticion, new { @class = "form-control", id = "txtarea" })
+                        @Html.ValidationMessageFor(model => model.Peticion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Enviar petición" class="btn btn-info" />
+                        @Html.ActionLink("Volver a las noticias", "Index","News",null, new { @class="btn btn-default"  })
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-lg-offset-2">
+            <p>Notas:</p>
+            <p>(1) Al enviar una petición se envía un e-mail automáticamente a la Fábrica con la misma</p>
+            <p>(2) Aparte de peticiones de noticias se puede pedir la inclusión de nuevos cliente o que se actualice la lista de clientes de un empleado</p>
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<GoalNews.Models.NoticiasViewModel>
+
+@{
+    ViewBag.Title = "Goal News";
+}
+
+<div class="jumbotron">
+    <div class="container-fluid">
+        <h2 style="text-align:center">Buscar Noticias</h2>
+
+        <div id="form" class="col-lg-6 col-md-8 col-sm-12">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="emp">Empleado</label>
+                        @Html.DropDownList("empleado", new SelectList(ViewBag.Empleado), string.Empty, new { @class = "form-control selectpicker", id = "emp", data_live_search = "true", title = "Filtrar Por empleado" })
+                    </div>
+                    <div id="content1" class="form-group" style="display:none;">
+                        <label for="cli">Cliente</label>
+                        @Html.DropDownList("cliente", new SelectList(ViewBag.Cliente), string.Empty, new { @class = "form-control selectpicker", id = "cli", data_live_search = "true", title = "Filtrar Por cliente" })
+                    </div>
+                    <div id="content2" class="form-group" style="display:none;">
+                        <label for="fec">Fecha</label>
+                        @Html.DropDownList("Fecha", new SelectList(ViewBag.Fecha), string.Empty, new { @class = "form-control selectpicker", id = "fec", title = "Filtrar Por fecha" })
+                    </div>
+                    <div class="form-group">
+                        <button id="sub" class="form-control btn btn-default" type="submit" style="width:100%">Filtrar noticias</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div  id="btngroup" class="list-group col-lg-6 col-md-4 col-sm-12 ">
+            <label  id="labeldisp" class="control-label col-md-2" style="font-size: 0;display:none;">hidden &zwnj;</label>
+            @if (Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Añadir noticia", "Create", FormMethod.Get, new { @class = "list-group-item btn btn-default",id="add", style = "margin-bottom:11px;" })
+            }
+            @Html.ActionLink("Exportar a Excel","ExportExcel","News", new { @class = "list-group-item btn btn-default", id = "export", style = "display:none;margin-bottom:11px;" })
+            @Html.ActionLink("Pedir noticias", "Create", "Requests", null, new { @class = "list-group-item btn btn-default", id="content3",  style= "display:none;margin-bottom:11px;" })
+            <button class="list-group-item btn btn-default" id='hideshow' value='hide/show' style="text-align:center">Más filtros y opciones</button>
+            <br />
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-offset-1">
+            <span style="font-weight:bolder; font-size:large">
+                @Html.DisplayFor(modelItem => item.New.Cliente) |
+                @Html.DisplayFor(modelItem => item.New.Fecha)
+            </span>
+            @if (Request.IsAuthenticated)
+            {
+                <span>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.New.ID }, new { @class = "btn btn-default btn-xs" }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.New.ID }, new { @class = "btn btn-default btn-xs" })
+                </span>
+
+            }
+            <hr style="margin:5px !important;color:black">
+            <div style="line-height:28px">
+                @Html.Raw(HttpUtility.HtmlDecode(item.New.Noticia))
+            </div>
+            <br />
+            <br />
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#hideshow').on('click', function (event) {
+                jQuery('#content1').toggle('show');
+                jQuery('#content2').toggle('show');
+                jQuery('#content3').toggle('show');
+                jQuery('#export').toggle('show');
+                jQuery('#labeldisp').toggle('show');
+
+
+            });
+        });
+    </script>
+
+}
+

@@ -1,0 +1,126 @@
+﻿body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+
+.jumbotron {
+    margin-top: 50px;
+}
+
+.jumbotron p{
+    font-size:16px;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+.true {
+    background-color: #bee2be;
+}
+
+.false {
+    background-color: #e2bec5;
+}
+
+
+#btngris{
+    background: #1f2b3d;
+    color: white;
+    border: medium;
+    border-color: aliceblue;
+}
+
+#txtarea{
+    width:100%;
+}
+/*----------------------------News View------------------------------------------*/
+
+#form btn-default {
+    background: #2a2d33;
+}
+
+#emp, #cli, #fec {
+    background: #2a2d33;
+    color: white;
+    border: medium;
+    border-color: aliceblue;
+}
+
+#add, #sub, #hideshow {
+    background: #174184;
+    color: white;
+    border: medium;
+    border-color: aliceblue;
+}
+
+#export {
+    background: #0b4226;
+    color: white;
+    border: medium;
+    border-color: aliceblue;
+}
+
+#content3 {
+    background: #5b0522;
+    color: white;
+    border: medium;
+    border-color: aliceblue;
+}
+
+
+/*@media (min-width: @screen-md-min) {
+    #btngroup {
+        margin-top: 25px;
+    }
+}*/
+
+#btngroup {
+    margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    #btngroup {
+        margin-top: 0;
+        padding: 0;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #btngroup {
+        margin-top: 25px;
+        padding: 0;
+        padding-left: 10px;
+    }
+}
+
+#form .bootstrap-select .btn {
+    background: #2a2d33;
+    background-color: #2a2d33;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    font-weight: 200;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#form .bootstrap-select .dropdown-menu {
+    background: #2a2d33;
+    color: #fff;
+    margin: 15px 0 0;
+}
+#form .bootstrap-select .dropdown-menu > li > a {
+    color: white;
+}
+#form .bootstrap-select.btn-group .btn .filter-option{
+        text-align: center;
+
+}
+
+

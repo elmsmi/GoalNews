@@ -1,0 +1,42 @@
+﻿@model GoalNews.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Peticion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peticion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resuelta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resuelta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
