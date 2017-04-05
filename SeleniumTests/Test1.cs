@@ -58,7 +58,7 @@ namespace SeleniumTests
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
-            driver.Navigate().GoToUrl("http://localhost/GoalNews/");
+            driver.Navigate().GoToUrl("http://localhost:51963/");
             driver.Manage().Window.Maximize();
             driver.FindElement(By.Id("registerLink")).Click();
             wait.Until(ExpectedConditions.ElementExists(By.Id("Email")));
@@ -76,7 +76,7 @@ namespace SeleniumTests
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
-            driver.Navigate().GoToUrl("http://localhost/GoalNews/");
+            driver.Navigate().GoToUrl("http://localhost:51963/");
             driver.FindElement(By.Id("loginLink")).Click();
             wait.Until(ExpectedConditions.ElementExists(By.Id("Email")));
             driver.FindElement(By.Id("Email")).SendKeys(email);

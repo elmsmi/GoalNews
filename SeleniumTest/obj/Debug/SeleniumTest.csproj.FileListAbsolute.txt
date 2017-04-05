@@ -1,0 +1,7 @@
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\bin\Debug\SeleniumTest.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\bin\Debug\SeleniumTest.pdb
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\obj\Debug\SeleniumTest.csprojResolveAssemblyReference.cache
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\obj\Debug\SeleniumTest.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\SeleniumTest\obj\Debug\SeleniumTest.pdb
