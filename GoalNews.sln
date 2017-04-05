@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalNews", "WebApplication2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{C59C6DA9-6E1E-4C9C-8ED2-0BE193634AC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTest", "SeleniumTest\SeleniumTest.csproj", "{971AAEC6-21BD-41D2-A73C-53A5A5BFA706}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C59C6DA9-6E1E-4C9C-8ED2-0BE193634AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59C6DA9-6E1E-4C9C-8ED2-0BE193634AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59C6DA9-6E1E-4C9C-8ED2-0BE193634AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{971AAEC6-21BD-41D2-A73C-53A5A5BFA706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971AAEC6-21BD-41D2-A73C-53A5A5BFA706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{971AAEC6-21BD-41D2-A73C-53A5A5BFA706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971AAEC6-21BD-41D2-A73C-53A5A5BFA706}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

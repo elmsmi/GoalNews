@@ -35,13 +35,13 @@ namespace SeleniumTests
             AddClient(_iexplorer, client);
             LogOutUser(_iexplorer);
         }
-        [TestMethod]
-        public void Can_loggin_and_add_Employee()
-        {
-            CreateUser(_iexplorer, email, password);
-            AddEmployee(_iexplorer, employee);
-            LogOutUser(_iexplorer);
-        }
+        //[TestMethod]
+        //public void Can_loggin_and_add_Employee()
+        //{
+        //    CreateUser(_iexplorer, email, password);
+        //    AddEmployee(_iexplorer, employee);
+        //    LogOutUser(_iexplorer);
+        //}
 
         [TestCleanup]
         public void TestCleanup()
