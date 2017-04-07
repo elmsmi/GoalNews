@@ -115,9 +115,9 @@ C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\b
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\roslyn\vbc.exe
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\roslyn\VBCSCompiler.exe
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\WebApplication2.dll.config
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\WebApplication2.dll
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\WebApplication2.pdb
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\GoalNews.dll.config
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\GoalNews.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\GoalNews.pdb
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\Antlr3.Runtime.dll
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\EntityFramework.dll
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\EntityFramework.SqlServer.dll
@@ -205,8 +205,8 @@ C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\b
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\GoalNews.csprojResolveAssemblyReference.cache
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\WebApplication2.dll
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\WebApplication2.pdb
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\WebApplication2.Migrations.InitialCreate.resources
-C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\GoalNews.csproj.GenerateResource.Cache
 C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\WebApplication2.Migrations.first.resources
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\GoalNews.csproj.GenerateResource.Cache
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\GoalNews.dll
+C:\Users\msmiri\Documents\Visual Studio 2015\Projects\GoalNews\WebApplication2\obj\Debug\GoalNews.pdb

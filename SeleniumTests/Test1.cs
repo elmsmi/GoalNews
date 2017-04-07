@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using System.Linq;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Chrome;
 
 namespace SeleniumTests
 {
@@ -12,8 +13,8 @@ namespace SeleniumTests
     {
 
         //private readonly IWebDriver _firefox = new FirefoxDriver();
-        //private readonly IWebDriver _chrome = new ChromeDriver();
-        private readonly IWebDriver _iexplorer = new InternetExplorerDriver();
+        private readonly IWebDriver _chrome = new ChromeDriver();
+        //private readonly IWebDriver _iexplorer = new InternetExplorerDriver();
 
         private string email = string.Join("", Guid.NewGuid().ToString().Take(6)) + "@gmail.com";
         private string password = "Ab*?" + string.Join("", Guid.NewGuid().ToString().Take(6));
@@ -23,31 +24,24 @@ namespace SeleniumTests
         [TestMethod]
         public void Can_Create_Account_And_Login()
         {
-            CreateUser(_iexplorer, email, password);
-            LogOutUser(_iexplorer);
-            LoginUser(_iexplorer, email, password);
-            LogOutUser(_iexplorer);
+            CreateUser(_chrome, email, password);
+            LogOutUser(_chrome);
+            LoginUser(_chrome, email, password);
+            LogOutUser(_chrome);
         }
         [TestMethod]
         public void Can_loggin_and_add_Client()
         {
-            CreateUser(_iexplorer, email, password);
-            AddClient(_iexplorer, client);
-            LogOutUser(_iexplorer);
+            CreateUser(_chrome, email, password);
+            AddClient(_chrome, client);
+            LogOutUser(_chrome);
         }
-        //[TestMethod]
-        //public void Can_loggin_and_add_Employee()
-        //{
-        //    CreateUser(_iexplorer, email, password);
-        //    AddEmployee(_iexplorer, employee);
-        //    LogOutUser(_iexplorer);
-        //}
 
         [TestCleanup]
         public void TestCleanup()
         {
-            if (_iexplorer != null)
-                _iexplorer.Quit();
+            if (_chrome != null)
+                _chrome.Quit();
             //if (_firefox != null)
             //    _firefox.Quit();
             //if (_chrome != null)
